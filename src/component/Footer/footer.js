@@ -1,11 +1,21 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaSquareFacebook } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
+const Footer = () => {
 
-const footer = () => {
+     useEffect(() => {
+       AOS.init({
+         duration: 1000,
+         once: true,
+         easing: "ease-in-out",
+       });
+     }, []);
   return (
     
     <>
@@ -66,4 +76,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer

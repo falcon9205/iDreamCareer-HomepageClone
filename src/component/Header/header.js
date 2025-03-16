@@ -4,11 +4,18 @@ import Link from "next/link";
 import React, { useEffect, useState} from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Header = () => {
   
   const [menuButton, setMenuButton] = useState(true);
-  
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: "ease-in-out",
+      });
+    }, []);
 
   return (
     <>
